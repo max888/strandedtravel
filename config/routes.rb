@@ -1,4 +1,10 @@
 StrandedTravel::Application.routes.draw do
+  resources :activities
+
+
+  resources :destinations
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
