@@ -1,3 +1,8 @@
+# config.assets.initialize_on_precompile = false   
+#### The above may be required if I decide to deploy to heroku!!!
+ ##On config/application.rb forcing your application to not access the DB
+####      or load models when precompiling your assets.
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
