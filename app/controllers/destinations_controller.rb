@@ -15,6 +15,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/1.json
   def show
     @destination = Destination.find(params[:id])
+    @activities = Activity.all, :destination_id[@destination.id]
 
     respond_to do |format|
       format.html # show.html.erb

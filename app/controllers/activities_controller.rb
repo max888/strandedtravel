@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/new
   # GET /activities/new.json
   def new
-    @activity = Activity.new
+    @activity = Activity.new(destination_id: params[:id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +42,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(params[:activity])
+    @activity.user = current_user
 
     respond_to do |format|
       if @activity.save

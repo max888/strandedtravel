@@ -6,6 +6,7 @@ StrandedTravel::Application.routes.draw do
   resources :activities
 
   resources :destinations
+  get 'destinations/:id/activities/new', to: 'activities#new', as: 'new_destination_activity'
 
   root :to => "destinations#index"
 

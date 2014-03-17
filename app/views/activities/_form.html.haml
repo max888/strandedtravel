@@ -11,10 +11,9 @@
     = f.label :name
     %br/
     = f.text_field :name
+  
   .field
-    = f.label :category_id
-    %br/
-    = f.number_field :category_id
+    = f.collection_select :category_id, Category.all, :id, :name, :prompt => true
   .field
     = f.label :description
     %br/
@@ -24,12 +23,6 @@
     %br/
     = f.text_field :url
   .field
-    = f.label :destination_id
-    %br/
-    = f.number_field :destination_id
-  .field
-    = f.label :user_id
-    %br/
-    = f.number_field :user_id
+    = f.hidden_field :destination_id
   .actions
     = f.submit

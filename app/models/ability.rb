@@ -12,6 +12,8 @@ class Ability
 
         can :read, :all
 
+        can :create, Activity
+
         can :create, Destination
         can :edit, Destination do |destination|
           destination.try(:user_id) == user.id 

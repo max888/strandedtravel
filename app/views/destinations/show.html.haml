@@ -1,6 +1,5 @@
 %p#notice= notice
-%p
-  %b City:
+%h1
   = @destination.city
 %p
   %b Country:
@@ -20,7 +19,42 @@
 %p
   %b Created by:
   = @destination.user.name
-= link_to 'Edit', edit_destination_path(@destination)
-= link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
-|
-\#{link_to 'Back', destinations_path}
+
+
+
+.eat_container
+  %h2 Eat
+  = @activities 
+
+.drink_container
+  %h2 Drink
+
+.sleep_container
+  %h2 Sleep
+
+.explore_container
+  %h2 Explore
+
+= link_to 'Add Activity', new_destination_activity_path(@destination.id)
+
+
+
+-if can? :edit, @destination
+  = link_to 'Edit', edit_destination_path(@destination)
+
+-if can? :destroy, @destination
+  = link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+
+#{link_to 'Back', destinations_path}
+
+
+
+
+
+
+
+
+
+
