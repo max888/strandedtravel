@@ -11,6 +11,7 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'omniauth-facebook'
+gem 'cancancan', '~> 1.7'
 
 
 # Gems used only for assets and not required

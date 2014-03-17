@@ -1,7 +1,6 @@
-
+%h1 Stranded Travel
 - @destinations.each do |destination|
   %ul
     %li= link_to "#{destination.city}", destination
     =image_tag destination.photo.medium
 %br/
-= link_to 'New Destination', new_destination_path

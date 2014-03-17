@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  load_and_authorize_resource
   # GET /activities
   # GET /activities.json
   def index

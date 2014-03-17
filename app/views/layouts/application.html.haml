@@ -6,21 +6,25 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    -if current_user
-      =current_user.email
 
-    %nav 
+    .container
       -if current_user
-        %p= link_to 'sign out', destroy_user_session_path, method: :delete
-      -else
-        %p= link_to 'sign in', new_user_session_path
-        %p= link_to 'sign up', new_user_registration_path
-        %p= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+        =current_user.email
+
+      %nav 
+        -if current_user
+          %p= link_to 'sign out', destroy_user_session_path, method: :delete
+        -else
+          %p= link_to 'sign in', new_user_session_path
+          %p= link_to 'sign up', new_user_registration_path
+          %p= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+
+        = link_to 'New Destination', new_destination_path
 
 
 
 
 
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+      %p.notice= notice
+      %p.alert= alert
+      = yield
