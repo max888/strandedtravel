@@ -15,7 +15,11 @@ class DestinationsController < ApplicationController
   # GET /destinations/1.json
   def show
     @destination = Destination.find(params[:id])
-    @activities = Activity.all, :destination_id[@destination.id]
+    @activities = Activity.where destination_id: @destination.id 
+    @eats = @activities.where :category_id => 1
+    @drinks = @activities.where :category_id => 2
+    @sleeps = @activities.where :category_id => 3
+
 
     respond_to do |format|
       format.html # show.html.erb
