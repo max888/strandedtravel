@@ -17,3 +17,5 @@
 
 .DS_Store
 /public/uploads/destination/
+/public/uploads/tmp
+

@@ -3,6 +3,8 @@ class Destination < ActiveRecord::Base
 
   has_many :activities
 
+  belongs_to :user
+
   mount_uploader :photo, DestinationImageUploader
   
 end

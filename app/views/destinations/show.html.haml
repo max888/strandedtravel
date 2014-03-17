@@ -18,8 +18,8 @@
   %b Longitude:
   = @destination.longitude
 %p
-  %b User:
-  = @destination.user_id
+  %b Created by:
+  = @destination.user.name
 = link_to 'Edit', edit_destination_path(@destination)
 = link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
 |
