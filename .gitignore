@@ -14,8 +14,8 @@
 /log/*.log
 /tmp
 
-
 .DS_Store
 /public/uploads/destination/
 /public/uploads/tmp
+
 
