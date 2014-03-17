@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
-  # GET /destinations
-  # GET /destinations.json
+  # before_filter :authenticate_user!  ##need this for omniauth?
+
   def index
     @destinations = Destination.all
 

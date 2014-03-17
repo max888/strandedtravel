@@ -1,20 +1,7 @@
-/ %h1 Listing destinations
-/ %table
-/   %tr
-/     %th City
-/     %th Country
-/     %th Description
-/     %th Latitude
-/     %th Longitude
-/     %th User
-/     %th
-/     %th
-/     %th
+
 - @destinations.each do |destination|
   %ul
-    %li= destination.city
-    %li= link_to 'Show', destination
-    %li= link_to 'Edit', edit_destination_path(destination)
-    %li= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }
+    %li= link_to "#{destination.city}", destination
+    =image_tag destination.photo.medium
 %br/
 = link_to 'New Destination', new_destination_path

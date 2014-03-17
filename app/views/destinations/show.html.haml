@@ -9,6 +9,9 @@
   %b Description:
   = @destination.description
 %p
+  %b photo:
+  =image_tag @destination.photo.medium
+%p
   %b Latitude:
   = @destination.latitude
 %p
@@ -18,5 +21,6 @@
   %b User:
   = @destination.user_id
 = link_to 'Edit', edit_destination_path(@destination)
+= link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
 |
 \#{link_to 'Back', destinations_path}
