@@ -1,3 +1,5 @@
+
+
 %p#notice= notice
 %h1
   = @destination.city
@@ -78,6 +80,10 @@
 
 = link_to 'Add Activity', new_destination_activity_path(@destination.id)
 
+%h3 Comments:
+
+.fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "dark"}
+
 
 
 -if can? :edit, @destination
@@ -90,7 +96,15 @@
 
 #{link_to 'Back', destinations_path}
 
-
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=744937855516502";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
 
 
