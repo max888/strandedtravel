@@ -19,6 +19,7 @@ class DestinationsController < ApplicationController
     @eats = @activities.where :category_id => 1
     @drinks = @activities.where :category_id => 2
     @sleeps = @activities.where :category_id => 3
+    @explores = @activities.where :category_id => 4
 
 
     respond_to do |format|

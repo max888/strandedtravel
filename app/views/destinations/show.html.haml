@@ -25,28 +25,32 @@
 
 .eat_container
   %h2 Eat
-  - @eats.each do |a|
-    .eat_item
-    =a.name
+  %ol
+    - @eats.each do |a|
+      %li=a.name
 
 
 .drink_container
   %h2 Drink
-  - @drinks.each do |a|
-    .drink_item
-    =a.name
+  %ol
+    - @drinks.each do |a|
+      %li=a.name
 
 
 .sleep_container
   %h2 Sleep
-  - @sleeps.each do |a|
-    .skeep_item
-    =a.name
+  %ol
+    - @sleeps.each do |a|
+      %li=a.name
 
 
 
 .explore_container
   %h2 Explore
+  %ol
+    - @explores.each do |a|
+      %li=a.name
+
 
 = link_to 'Add Activity', new_destination_activity_path(@destination.id)
 
