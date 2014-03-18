@@ -9,15 +9,9 @@
 %p
   %b Description:
   = @destination.description
-%p
-  %b photo:
-  =image_tag @destination.photo.medium
-%p
-  %b Latitude:
-  = @destination.latitude
-%p
-  %b Longitude:
-  = @destination.longitude
+
+  
+
 %p
   %b Created by:
   = @destination.user.name
@@ -79,6 +73,12 @@
 
 
 = link_to 'Add Activity', new_destination_activity_path(@destination.id)
+
+%p
+  %b Latest from #{@destination.city}
+  / =image_tag @destination.photo.medium
+  - @images.each do |image|
+    =image_tag image
 
 %h3 Comments:
 

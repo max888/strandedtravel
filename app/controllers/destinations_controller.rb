@@ -23,6 +23,10 @@ class DestinationsController < ApplicationController
     @sleeps = @activities.where :category_id => 3
     @explores = @activities.where :category_id => 4
 
+    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination.city}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc")
+    body = JSON.parse(photo_data.body)["data"]
+    @images = body.map { |i| i["images"]["low_resolution"]["url"] }
+
 
     respond_to do |format|
       format.html # show.html.erb
