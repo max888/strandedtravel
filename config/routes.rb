@@ -3,7 +3,15 @@ StrandedTravel::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  resources :activities
+  resources :activities do
+    member do
+      post :vote_up
+      post :vote_down
+      post :remove_vote
+    end
+  end
+
+  resources :votes
 
   resources :destinations
   get 'destinations/:id/activities/new', to: 'activities#new', as: 'new_destination_activity'

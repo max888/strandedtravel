@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.7'
+gem 'thumbs_up'
 
 
 # Gems used only for assets and not required

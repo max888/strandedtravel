@@ -20,6 +20,7 @@ class DestinationsController < ApplicationController
     @drinks = @activities.where :category_id => 2
     @sleeps = @activities.where :category_id => 3
     @explores = @activities.where :category_id => 4
+    @user = current_user
 
 
     respond_to do |format|

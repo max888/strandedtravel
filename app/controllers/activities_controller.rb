@@ -83,4 +83,57 @@ class ActivitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+  def vote_up
+    @activity = Activity.find(params[:id])
+    @destination = Destination.where(:id => @activity.destination_id).first
+    begin
+      current_user.vote_for(@activity)
+      redirect_to @destination 
+      
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def vote_down
+    @activity = Activity.find(params[:id])
+    @destination = Destination.where(:id => @activity.destination_id).first
+
+    begin
+      current_user.vote_against(@activity)
+      redirect_to @destination, notice: "you disliked #{@activity.name}" 
+      
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+
+  end
+
+  def remove_vote
+    @activity = Activity.find(params[:id])
+    @destination = Destination.where(:id => @activity.destination_id).first
+    begin
+      current_user.unvote_for(@activity)
+      redirect_to @destination, notice: "you liked #{@activity.name}" 
+      
+      rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
