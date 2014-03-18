@@ -5,7 +5,7 @@ class DestinationsController < ApplicationController
   def index
     # @destinations = Destination.all
     @q = Destination.search(params[:q])
-    @destinations = @q.result(:distinct => true)
+    @destinations = @q.result(:distinct => true).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

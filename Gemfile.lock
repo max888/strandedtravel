@@ -229,6 +229,7 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
+  kaminari
   omniauth-facebook
   pry-byebug
   pry-rails

@@ -13,7 +13,9 @@ StrandedTravel::Application.routes.draw do
 
   resources :votes
 
-  resources :destinations
+  resources :destinations do
+    get 'page/:page', action: :index, on: :collection
+  end
   get 'destinations/:id/activities/new', to: 'activities#new', as: 'new_destination_activity'
 
   root :to => "destinations#index"
