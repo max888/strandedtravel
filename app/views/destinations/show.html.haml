@@ -29,11 +29,12 @@
     - @eats.each do |a|
       %li=a.name 
       =a.plusminus 
-      -if current_user.voted_against?(a)
-        =link_to 'vote up', vote_up_activity_path(a), :method => :post
+      -if current_user.voted_against?(a) || current_user.voted_for?(a)
+        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
       -else
+        =link_to 'vote up', vote_up_activity_path(a), :method => :post
         =link_to 'vote down', vote_down_activity_path(a), :method => :post
-      =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+      
 
 
 .drink_container
@@ -41,13 +42,24 @@
   %ol
     - @drinks.each do |a|
       %li=a.name
-
+      =a.plusminus
+      -if current_user.voted_against?(a) || current_user.voted_for?(a)
+        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+      -else
+        =link_to 'vote up', vote_up_activity_path(a), :method => :post
+        =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
 .sleep_container
   %h2 Sleep
   %ol
     - @sleeps.each do |a|
       %li=a.name
+      =a.plusminus
+      -if current_user.voted_against?(a) || current_user.voted_for?(a)
+        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+      -else
+        =link_to 'vote up', vote_up_activity_path(a), :method => :post
+        =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
 
 
@@ -56,6 +68,12 @@
   %ol
     - @explores.each do |a|
       %li=a.name
+      =a.plusminus
+      -if current_user.voted_against?(a) || current_user.voted_for?(a)
+        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+      -else
+        =link_to 'vote up', vote_up_activity_path(a), :method => :post
+        =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
 
 = link_to 'Add Activity', new_destination_activity_path(@destination.id)

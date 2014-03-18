@@ -15,12 +15,11 @@ class DestinationsController < ApplicationController
   # GET /destinations/1.json
   def show
     @destination = Destination.find(params[:id])
-    @activities = Activity.where destination_id: @destination.id 
+    @activities = Activity.where(destination_id: @destination.id).plusminus_tally.order('plusminus_tally DESC')
     @eats = @activities.where :category_id => 1
     @drinks = @activities.where :category_id => 2
     @sleeps = @activities.where :category_id => 3
     @explores = @activities.where :category_id => 4
-    @user = current_user
 
 
     respond_to do |format|
