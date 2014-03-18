@@ -3,7 +3,9 @@ class DestinationsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @destinations = Destination.all
+    # @destinations = Destination.all
+    @q = Destination.search(params[:q])
+    @destinations = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

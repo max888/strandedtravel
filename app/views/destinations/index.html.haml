@@ -1,4 +1,10 @@
 %h1 Stranded Travel
+
+= search_form_for @q do |f| 
+  = f.label 'Find'
+  = f.text_field :city_or_country_cont ##searches for a destination that 'city' or 'country' fields contain the input. Search limited to string size (256 characters)
+  = f.submit
+
 - @destinations.each do |destination|
   %ul
     %li= link_to "#{destination.city}", destination
