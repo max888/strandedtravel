@@ -12,9 +12,20 @@ $( document ).ready(function() {
 
 
 function initialize() {
+
+
   var mapOptions = {
     zoom: 10,
-    center: new google.maps.LatLng($('#latitude').val(), $('#longitude').val())
+    center: new google.maps.LatLng($('#latitude').val(), $('#longitude').val()),
+    styles: [
+  {
+    "stylers": [
+      { "hue": "#00d4ff" }
+    ]
+  },{
+  }
+]
+
   };
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -30,3 +41,6 @@ function loadScript() {
 }
 
 $(loadScript);   
+
+
+
