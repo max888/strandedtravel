@@ -22,8 +22,9 @@ class DestinationsController < ApplicationController
     @drinks = @activities.where :category_id => 2
     @sleeps = @activities.where :category_id => 3
     @explores = @activities.where :category_id => 4
+    @destination_city_nowhitespace = @destination.city.delete(' ')
 
-    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination.city}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc")
+    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc")
     body = JSON.parse(photo_data.body)["data"]
     @images = body.map { |i| i["images"]["low_resolution"]["url"] }
 
