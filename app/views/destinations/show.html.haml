@@ -17,6 +17,8 @@
   = @destination.user.name
 
 
+#map-canvas
+
 
 
 .eat_container
@@ -72,6 +74,8 @@
         =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
 
+
+
 = link_to 'Add Activity', new_destination_activity_path(@destination.id)
 
 %p
@@ -95,6 +99,12 @@
 
 
 #{link_to 'Back', destinations_path}
+
+=hidden_field_tag :longitude, @destination.longitude
+=hidden_field_tag :latitude, @destination.latitude
+
+
+%script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBxwNn8ocQD9P_xnAvPlp7Q72fJJx4WMQA&sensor=false", type: "text/javascript"}
 
 #fb-root
 :javascript

@@ -70,6 +70,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (3.2.1.3)
       railties (>= 3.2, < 5.0)
+    geocoder (1.1.9)
     haml (4.0.5)
       tilt
     haml-rails (0.4)
@@ -230,6 +231,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
+  geocoder
   haml-rails
   httparty
   jquery-rails

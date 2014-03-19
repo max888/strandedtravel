@@ -27,6 +27,10 @@ class DestinationsController < ApplicationController
     body = JSON.parse(photo_data.body)["data"]
     @images = body.map { |i| i["images"]["low_resolution"]["url"] }
 
+    geo_photo_data  = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@destination.latitude}8&lng=#{@destination.longitude}&access_token=41307971.8f6d1dc.ca108e84e31a4e9ab8527621efff201b")
+    geo_body = JSON.parse(photo_data.body)["data"]
+    @geo_images = body.map { |i| i["images"]["low_resolution"]["url"] }
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -94,4 +98,6 @@ class DestinationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

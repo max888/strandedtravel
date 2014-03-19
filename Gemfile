@@ -16,6 +16,7 @@ gem 'thumbs_up'
 gem 'ransack'
 gem 'kaminari'
 gem 'httparty'
+gem 'geocoder'
 
 
 # Gems used only for assets and not required

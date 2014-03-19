@@ -5,8 +5,8 @@ class Destination < ActiveRecord::Base
 
   belongs_to :user
 
-  
-
+  geocoded_by :city
+  after_validation :geocode
   mount_uploader :photo, DestinationImageUploader
   
 end
