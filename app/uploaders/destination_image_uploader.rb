@@ -36,7 +36,7 @@ class DestinationImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do
-     process resize_to_fit: [180, 180]
+     process resize_to_fit: [300, 300]
   end
   
   version :detail do
