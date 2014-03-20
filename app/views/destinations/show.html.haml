@@ -6,6 +6,10 @@
 %p
   %b Country:
   = @destination.country
+
+  =image_tag @destination.photo.detail
+
+
 %p
   %b Description:
   = @destination.description
@@ -84,12 +88,12 @@
   - @images.each do |image|
     =image_tag image
 
-
+=image_tag @destination.photo.insta
 
 
 %h3 Comments:
 
-.fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "dark"}
+.fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
 
 
 

@@ -32,15 +32,19 @@ class DestinationImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-     process resize_to_fit: [50, 50]
+     process resize_to_fit: [100, 100]
   end
 
   version :medium do
-     process resize_to_fit: [300, 300]
+     process resize_to_fit: [350, 350]
   end
   
   version :detail do
-     process resize_to_fit: [960, 550]
+     process resize_to_fit: [600, 550]
+  end
+
+  version :insta do
+     process resize_to_fit: [305, 305]
   end
 
   # Create different versions of your uploaded files:
