@@ -40,7 +40,7 @@
   %h2 Drink
   %ol
     - @drinks.each do |a|
-      %li= link_to a.name, a.url
+      %li= a.url.blank? ? a.name : link_to(a.name, a.url)
       =a.plusminus
       -if current_user.voted_against?(a) || current_user.voted_for?(a)
         =link_to 'remove vote', remove_vote_activity_path(a), :method => :post

@@ -11,7 +11,7 @@ class Activity < ActiveRecord::Base
   before_validation :correct_url
 
   def correct_url
-    self.url = "http://#{self.url}" unless self.url[/\Ahttp/]
+    self.url = "http://#{self.url}" if !self.url[/\Ahttp/] && !url.blank?
   end
 end
 
