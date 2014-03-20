@@ -24,7 +24,7 @@ class DestinationsController < ApplicationController
     @explores = @activities.where :category_id => 4
     @destination_city_nowhitespace = @destination.city.delete(' ')
 
-    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc")
+    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc&callback=?&count=6")
     body = JSON.parse(photo_data.body)["data"]
     @images = body.map { |i| i["images"]["low_resolution"]["url"] }
 
@@ -32,6 +32,17 @@ class DestinationsController < ApplicationController
     geo_body = JSON.parse(photo_data.body)["data"]
     @geo_images = body.map { |i| i["images"]["low_resolution"]["url"] }
 
+
+    # client = Twitter::REST::Client.new do |config|
+    #   config.consumer_key        = "5rdaJ4nM1LXlyQuENp1mEQ"
+    #   config.consumer_secret     = "U5VrjAMUYFd0ZcKQUzEVUVQxPus468gar9WTQncbjsE"
+    #   config.access_token        = "814910718-49mXFfhTpZ5n0i76htwG4ll8fMdKb0D5Utc537hr"
+    #   config.access_token_secret = "LIsbmwT92evrZnVuAWDDKExOkuLVFYELxJCBxZ4snStTP"
+    # end
+
+
+    # @max = client.user("maxnorton_")
+    # raise
 
     respond_to do |format|
       format.html # show.html.erb

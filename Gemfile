@@ -17,6 +17,8 @@ gem 'ransack'
 gem 'kaminari'
 gem 'httparty'
 gem 'geocoder'
+gem 'twitter'
+gem 'twitter-text'
 
 
 # Gems used only for assets and not required
