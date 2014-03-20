@@ -21,6 +21,7 @@
 
 
 
+
 .eat_container
   %h2 Eat
   %ol
@@ -80,9 +81,11 @@
 
 %p
   %b Latest from #{@destination.city}
-  / =image_tag @destination.photo.medium
   - @images.each do |image|
     =image_tag image
+
+
+
 
 %h3 Comments:
 
@@ -113,9 +116,6 @@
     js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=744937855516502";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-
-
-
 
 
 
