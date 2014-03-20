@@ -7,5 +7,11 @@ class Activity < ActiveRecord::Base
   belongs_to :user
 
   acts_as_voteable
-  
+
+  before_validation :correct_url
+
+  def correct_url
+    self.url = "http://#{self.url}" unless self.url[/\Ahttp/]
+  end
 end
+
