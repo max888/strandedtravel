@@ -13,3 +13,52 @@
   float: left;
   margin-right: 5px;
 }
+
+nav {
+  border: 2px solid green;
+  width: 100%;
+  overflow: auto;
+}
+
+i.fa.fa-home.fa-2x {
+  float: left;
+}
+
+i.fa {
+  padding: 10px;
+  color: grey;
+  float: right;
+}
+
+
+a:hover i.fa {color: black;}
+
+
+#logo {
+  border: 2px solid red;
+  text-align: center;
+}
+
+#logo h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 100px;
+  padding: 15px;
+  line-height: 100%;
+}
+
+.search {
+  border: 2px solid blue;
+}
+
+#search_input {
+  border: 2px solid yellow;
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
