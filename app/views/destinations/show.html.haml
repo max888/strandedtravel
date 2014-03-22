@@ -7,83 +7,75 @@
       = @destination.city
     %h3
       = @destination.country
+  
+  // Large show image
+  =image_tag @destination.photo.detail, :id => 'big_image'
+  
+  #description 
+    %p
+      =@destination.description
+      %br
+      %span
+        Created by #{@destination.user.name}
 
-  =image_tag @destination.photo.detail
 
+  .activities 
 
-  %p
-    %b Description:
-    = @destination.description
+    .six.columns.eat_container
+      %h2 Eat
+      %ol
+        - @eats.each do |a|
+          / below checks to see if the url is blank, if it is it will not make the activity name a link
+          %li= a.url.blank? ? a.name : link_to(a.name, a.url)
+          =a.plusminus 
+          -if current_user
+            -if current_user.voted_against?(a) || current_user.voted_for?(a)
+              =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+            -else
+              =link_to vote_up_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-up
+              =link_to vote_down_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-down  
 
     
+    .six.columns.drink_container
+      %h2 Drink
+      %ol
+        - @drinks.each do |a|
+          %li= a.url.blank? ? a.name : link_to(a.name, a.url)
+          =a.plusminus
+          -if current_user
+            -if current_user.voted_against?(a) || current_user.voted_for?(a)
+              =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+            -else
+              =link_to 'vote up', vote_up_activity_path(a), :method => :post
+              =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
-  %p
-    %b Created by:
-    = @destination.user.name
+    .six.columns.sleep_container
+      %h2 Sleep
+      %ol
+        - @sleeps.each do |a|
+          %li= a.url.blank? ? a.name : link_to(a.name, a.url)
+          =a.plusminus
+          -if current_user
+            -if current_user.voted_against?(a) || current_user.voted_for?(a)
+              =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+            -else
+              =link_to 'vote up', vote_up_activity_path(a), :method => :post
+              =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
-
-  #map-canvas
-
-
-
-
-  .eat_container
-    %h2 Eat
-    %ol
-      - @eats.each do |a|
-        / below checks to see if the url is blank, if it is it will not make the activity name a link
-        %li= a.url.blank? ? a.name : link_to(a.name, a.url)
-        =a.plusminus 
-        -if current_user
-          -if current_user.voted_against?(a) || current_user.voted_for?(a)
-            =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
-          -else
-            =link_to 'vote up', vote_up_activity_path(a), :method => :post
-            =link_to 'vote down', vote_down_activity_path(a), :method => :post
-
-        
-
-
-  .drink_container
-    %h2 Drink
-    %ol
-      - @drinks.each do |a|
-        %li= a.url.blank? ? a.name : link_to(a.name, a.url)
-        =a.plusminus
-        -if current_user
-          -if current_user.voted_against?(a) || current_user.voted_for?(a)
-            =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
-          -else
-            =link_to 'vote up', vote_up_activity_path(a), :method => :post
-            =link_to 'vote down', vote_down_activity_path(a), :method => :post
-
-  .sleep_container
-    %h2 Sleep
-    %ol
-      - @sleeps.each do |a|
-        %li= a.url.blank? ? a.name : link_to(a.name, a.url)
-        =a.plusminus
-        -if current_user
-          -if current_user.voted_against?(a) || current_user.voted_for?(a)
-            =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
-          -else
-            =link_to 'vote up', vote_up_activity_path(a), :method => :post
-            =link_to 'vote down', vote_down_activity_path(a), :method => :post
-
-
-
-  .explore_container
-    %h2 Explore
-    %ol
-      - @explores.each do |a|
-        %li= a.url.blank? ? a.name : link_to(a.name, a.url)
-        =a.plusminus
-        -if current_user
-          -if current_user.voted_against?(a) || current_user.voted_for?(a)
-            =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
-          -else
-            =link_to 'vote up', vote_up_activity_path(a), :method => :post
-            =link_to 'vote down', vote_down_activity_path(a), :method => :post
+    .six.columns.explore_container
+      %h2 Explore
+      %ol
+        - @explores.each do |a|
+          %li= a.url.blank? ? a.name : link_to(a.name, a.url)
+          =a.plusminus
+          -if current_user
+            -if current_user.voted_against?(a) || current_user.voted_for?(a)
+              =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+            -else
+              =link_to 'vote up', vote_up_activity_path(a), :method => :post
+              =link_to 'vote down', vote_down_activity_path(a), :method => :post
 
 
 
@@ -96,7 +88,7 @@
     - @images.each do |image|
       =image_tag image
 
-
+  #map-canvas 
 
   %h3 Comments:
 
