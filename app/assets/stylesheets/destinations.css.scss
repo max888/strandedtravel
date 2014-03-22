@@ -6,13 +6,7 @@
 //   height: 300px;
 // }
 
-#map-canvas {
-  display: inline;
-  width: 300px;
-  height: 300px;
-  float: left;
-  margin-right: 5px;
-}
+
 
 nav {
   border: 2px solid green;
@@ -85,6 +79,40 @@ a:hover i.fa {color: black;}
    top: 200px; 
    left: 0; 
    width: 100%; 
+}
+
+
+
+
+
+
+
+// For show page
+
+
+#map-canvas {
+  display: inline;
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin-right: 5px;
+}
+
+
+#country_header {
+  border: 2px solid red;
+  text-align: center;
+}
+
+#country_header h1 {
+  font-size: 100px;
+  line-height: 100%;
+}
+
+#country_header h3 {
+  font-family: 'Amatic SC', cursive;
+  line-height: 100%;
+  font-size: 50px;
 }
 
 
