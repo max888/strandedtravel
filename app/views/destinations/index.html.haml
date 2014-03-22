@@ -8,12 +8,13 @@
       = f.submit :id => 'submit'
       // //##searches for a destination that 'city' or 'country' fields contain the input. Search limited to string size (256 characters)
 
-  - @destinations.each do |destination|
+  .photos_container
     %ul
-      %li
-        = link_to(image_tag(destination.photo.medium), destination, :id => 'destination_image')
-        %h3
-          =destination.city
+      - @destinations.each do |destination|
+        %li
+          = link_to(image_tag(destination.photo.insta, :id => 'destination_image'), destination)
+          %h3
+            =destination.city
       
   %br/
 

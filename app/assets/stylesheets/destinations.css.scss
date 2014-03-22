@@ -68,6 +68,40 @@ a:hover i.fa {color: black;}
   margin-top: 15px;
 }
 
+.photos_container {
+  border: 2px solid green;
+}
+
+.photos_container li {
+  border: 2px solid yellow;
+  display: inline-block;
+  // position: relative; 
+}
+
+
+
+.photos_container h3 {
+   // position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
