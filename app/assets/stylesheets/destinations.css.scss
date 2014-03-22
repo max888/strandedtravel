@@ -48,12 +48,24 @@ a:hover i.fa {color: black;}
 
 .search {
   border: 2px solid blue;
+  display: block;
 }
 
-#search_input {
-  border: 2px solid yellow;
-  width: 50%;
+#destination_search {
+  display: block;
+  max-width: 300px;
   margin: 0 auto;
+}
+
+#q_city_or_country_cont {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#submit {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 
