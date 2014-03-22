@@ -9,7 +9,7 @@
 
 
 nav {
-  border: 2px solid green;
+  // border: 2px solid green;
   width: 100%;
   overflow: auto;
 }
@@ -90,17 +90,10 @@ a:hover i.fa {color: black;}
 // For show page
 
 
-#map-canvas {
-  display: inline;
-  width: 300px;
-  height: 300px;
-  float: left;
-  margin-right: 5px;
-}
 
 
 #country_header {
-  border: 2px solid red;
+  // border: 2px solid red;
   text-align: center;
 }
 
@@ -125,7 +118,12 @@ a:hover i.fa {color: black;}
   display: block;
   margin: 0 auto;
   margin-top: 30px;
+  margin-bottom: 50px;
   width: 500px;
+}
+
+#description p {
+  text-align: justify;
 }
 
 #description span{
@@ -139,17 +137,58 @@ a:hover i.fa {color: black;}
 
 }
 
+#add_activity {
+  display: block
+}
 
 
+.activities h2 {
+  text-align: center;
+}
 
+#latest {
+display: inline-block;
+width: 100%;
+margin-top: 30px;
+margin-bottom: 30px;
+}
 
+#latest h2 {
+  text-align: center;
+  color: lightgrey;
+  font-family: 'Oswald', sans-serif; 
+}
 
+.insta_images {
+    border: 2px solid red;
+}
 
+// .twitter_map {
+//    border: 2px solid brown;
 
+// }
 
+#twitterbox {
+  background-color: lightblue;
+  height:300px;
+  width: 600px;
+  display: inline-block;
+  border: 2px solid green;
+  float: right;
 
+}
 
+#map-canvas {
+  width: 300px;
+  height: 300px;
+  margin-right: 5px;
+  display: inline-block;
+  border: 2px solid red;
 
+}
 
+#comments {
+  display: block
+}
 
 

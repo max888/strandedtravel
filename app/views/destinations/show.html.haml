@@ -1,4 +1,4 @@
-.sixteen.columns
+.sixteen.columns.show
 
   %p#notice= notice
 
@@ -16,18 +16,16 @@
       =@destination.description
       %br
       %span
-        Created by #{@destination.user.name}
+        As described by #{@destination.user.name}
 
+  .activities.sixteen.columns
 
-  .activities 
-
-    .six.columns.eat_container
+    .seven.columns.eat_container
       %h2 Eat
       %ol
         - @eats.each do |a|
-          / below checks to see if the url is blank, if it is it will not make the activity name a link
           %li= a.url.blank? ? a.name : link_to(a.name, a.url)
-          =a.plusminus 
+          =a.plusminus
           -if current_user
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
@@ -35,10 +33,9 @@
               =link_to vote_up_activity_path(a), :method => :post do
                 %i.fa.fa-thumbs-o-up
               =link_to vote_down_activity_path(a), :method => :post do
-                %i.fa.fa-thumbs-o-down  
-
-    
-    .six.columns.drink_container
+                %i.fa.fa-thumbs-o-down 
+  
+    .seven.columns.drink_container
       %h2 Drink
       %ol
         - @drinks.each do |a|
@@ -48,10 +45,12 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to 'vote up', vote_up_activity_path(a), :method => :post
-              =link_to 'vote down', vote_down_activity_path(a), :method => :post
+              =link_to vote_up_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-up
+              =link_to vote_down_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-down 
 
-    .six.columns.sleep_container
+    .seven.columns.sleep_container
       %h2 Sleep
       %ol
         - @sleeps.each do |a|
@@ -61,10 +60,12 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to 'vote up', vote_up_activity_path(a), :method => :post
-              =link_to 'vote down', vote_down_activity_path(a), :method => :post
+              =link_to vote_up_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-up
+              =link_to vote_down_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-down 
 
-    .six.columns.explore_container
+    .seven.columns.explore_container
       %h2 Explore
       %ol
         - @explores.each do |a|
@@ -74,25 +75,31 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to 'vote up', vote_up_activity_path(a), :method => :post
-              =link_to 'vote down', vote_down_activity_path(a), :method => :post
+              =link_to vote_up_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-up
+              =link_to vote_down_activity_path(a), :method => :post do
+                %i.fa.fa-thumbs-o-down 
 
 
 
 
+  
+  #latest
+    %h2 Latest from ##{@destination.city}
 
-  = link_to 'Add Activity', new_destination_activity_path(@destination.id)
-
-  %p
-    %b Latest from #{@destination.city}
+  .insta_images
     - @images.each do |image|
       =image_tag image
 
   #map-canvas 
 
-  %h3 Comments:
+  #twitterbox
+    %p twitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twitter
 
-  .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
+  #Comments
+    %h3 Comments:
+
+    .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
 
 
 
