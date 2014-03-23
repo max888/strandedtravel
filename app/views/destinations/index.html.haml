@@ -2,11 +2,12 @@
   #logo
     %h1 Stranded Travel
 
-  .search
-    = search_form_for @q do |f| 
-      = f.text_field :city_or_country_cont 
-      = f.submit :id => 'submit'
-      // //##searches for a destination that 'city' or 'country' fields contain the input. Search limited to string size (256 characters)
+  .hidden
+    .search
+      = search_form_for @q do |f| 
+        = f.text_field :city_or_country_cont 
+        = f.submit :id => 'submit'
+        // //##searches for a destination that 'city' or 'country' fields contain the input. Search limited to string size (256 characters)
 
   .photos_container
     %ul

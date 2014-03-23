@@ -82,7 +82,9 @@ a:hover i.fa {color: black;}
 }
 
 
-
+  .hidden {
+    display: none;  
+  }
 
 
 
@@ -144,6 +146,16 @@ a:hover i.fa {color: black;}
 
 .activities h2 {
   text-align: center;
+}
+
+.seven.columns.eat_container {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.seven.columns.sleep_container {
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .latest {

@@ -1,3 +1,4 @@
+
 $( document ).ready(function() {
  (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -9,10 +10,9 @@ $( document ).ready(function() {
 });
 
 
-
+// Google map options and styling
 
 function initialize() {
-
 
   var mapOptions = {
     zoom: 10,
@@ -40,7 +40,42 @@ function loadScript() {
   document.body.appendChild(script);
 }
 
+
+
 $(loadScript);   
+
+
+
+// //modified javascript 
+
+// $( document ).ready(function() {
+
+//   showSearch = function () { 
+//     var $search_box = $('.search');
+
+//     $("#logo").click(function(){
+//     $search_box.slideDown();
+//     )};
+
+// )};
+
+
+// $( document ).ready(function() {
+//   function test() {
+//     alert('is this working?');
+//   );
+
+// )};
+
+
+
+
+
+
+
+
+
+
 
 
 
