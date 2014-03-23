@@ -84,22 +84,25 @@
 
 
   
-  #latest
+  .latest
     %h2 Latest from ##{@destination.city}
 
   .insta_images
     - @images.each do |image|
       =image_tag image
 
+  .latest
+    %h2 ##{@destination.city} #Travel
+
   #map-canvas 
 
   #twitterbox
     %p twitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twitter
 
-  #Comments
+  .comments
     %h3 Comments:
-
-    .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
+    #fbcomments
+      .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
 
 
 

@@ -146,21 +146,21 @@ a:hover i.fa {color: black;}
   text-align: center;
 }
 
-#latest {
+.latest {
 display: inline-block;
 width: 100%;
 margin-top: 30px;
 margin-bottom: 30px;
 }
 
-#latest h2 {
+.latest h2 {
   text-align: center;
   color: lightgrey;
   font-family: 'Oswald', sans-serif; 
 }
 
 .insta_images {
-    border: 2px solid red;
+   margin-bottom: 50px;
 }
 
 // .twitter_map {
@@ -173,7 +173,7 @@ margin-bottom: 30px;
   height:300px;
   width: 600px;
   display: inline-block;
-  border: 2px solid green;
+  // border: 2px solid green;
   float: right;
 
 }
@@ -183,12 +183,27 @@ margin-bottom: 30px;
   height: 300px;
   margin-right: 5px;
   display: inline-block;
-  border: 2px solid red;
+  // border: 2px solid red;
 
 }
 
-#comments {
-  display: block
+.comments {
+  margin-top: 70px;
 }
+
+.comments h3 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#fbcomments {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 
 
