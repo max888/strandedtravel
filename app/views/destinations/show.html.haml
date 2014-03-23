@@ -81,8 +81,9 @@
                 %i.fa.fa-thumbs-o-down 
 
 
-
-
+  #add_activity
+    =link_to new_activity_path do
+      %i.fa.fa-plus.fa-2x New Activity
   
   .latest
     %h2 Latest from ##{@destination.city}
@@ -104,17 +105,16 @@
     #fbcomments
       .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
 
+  .bottom_nav
 
+    -if can? :edit, @destination
+      = link_to 'Edit', edit_destination_path(@destination)
 
-  -if can? :edit, @destination
-    = link_to 'Edit', edit_destination_path(@destination)
+    -if can? :destroy, @destination
+      = link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
 
-  -if can? :destroy, @destination
-    = link_to 'Destroy', @destination, method: :delete, data: { confirm: 'Are you sure?' }
+    #{link_to 'Back', destinations_path}
 
-
-
-  #{link_to 'Back', destinations_path}
 
 =hidden_field_tag :longitude, @destination.longitude
 =hidden_field_tag :latitude, @destination.latitude
