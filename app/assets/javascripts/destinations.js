@@ -100,6 +100,10 @@ $(document).ready(function(){
 
   });
 
+  $('#close_button').on('click', function() {
+    ('#activities_form').hide();
+  });
+
 });
 
 
