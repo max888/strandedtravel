@@ -28,10 +28,9 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              
               =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
                 %i.fa.fa-thumbs-o-up
-              =link_to vote_down_activity_path(a), :method => :post do
+              =link_to vote_down_activity_path(a), class: "vote_down_activity", :method => :post do
                 %i.fa.fa-thumbs-o-down 
   
     .seven.columns.drink_container
@@ -44,9 +43,9 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to vote_up_activity_path(a), :method => :post do
+              =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
                 %i.fa.fa-thumbs-o-up
-              =link_to vote_down_activity_path(a), :method => :post do
+              =link_to vote_down_activity_path(a), class: "vote_down_activity", :method => :post do
                 %i.fa.fa-thumbs-o-down 
 
     .seven.columns.sleep_container
@@ -59,11 +58,11 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to vote_up_activity_path(a), :method => :post do
+              =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
                 %i.fa.fa-thumbs-o-up
-              =link_to vote_down_activity_path(a), :method => :post do
+              =link_to vote_down_activity_path(a), class: "vote_down_activity", :method => :post do
                 %i.fa.fa-thumbs-o-down 
-
+                
     .seven.columns.explore_container
       %h2 Explore
       %ol
@@ -74,9 +73,9 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to vote_up_activity_path(a), :method => :post do
+              =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
                 %i.fa.fa-thumbs-o-up
-              =link_to vote_down_activity_path(a), :method => :post do
+              =link_to vote_down_activity_path(a), class: "vote_down_activity", :method => :post do
                 %i.fa.fa-thumbs-o-down 
 
 

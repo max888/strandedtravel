@@ -107,8 +107,10 @@ class ActivitiesController < ApplicationController
 
     begin
       current_user.vote_against(@activity)
-      redirect_to @destination, notice: "you disliked #{@activity.name}" 
-      
+      respond_to do |format|
+        format.html { redirect_to @destination }
+        format.json { render json: {} }
+      end      
     rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404
     end

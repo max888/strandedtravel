@@ -70,6 +70,26 @@ $(document).ready(function(){
       type: "POST",
       success: function(data) {
         console.log('voted up successfully');
+        $(ev.currentTarget).hide();
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    });
+
+    return false;
+
+  });
+
+  $('.vote_down_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        console.log('voted up successfully');
+        $(ev.currentTarget).hide();
       },
       error: function(data) {
         console.log('voted up broke');
