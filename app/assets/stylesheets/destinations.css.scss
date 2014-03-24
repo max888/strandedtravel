@@ -158,6 +158,10 @@ a:hover i.fa {color: black;}
   padding-right: 35px;
 }
 
+.form_hide {
+  display: none;
+}
+
 .latest {
 display: inline-block;
 width: 100%;
@@ -220,4 +224,13 @@ margin-bottom: 30px;
   text-align: center;
 }
 
-
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:90%;
+    width:50%;
+    background: #000;
+    display: none;
+}

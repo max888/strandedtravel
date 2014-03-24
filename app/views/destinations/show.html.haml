@@ -84,6 +84,15 @@
   #add_activity
     =link_to new_activity_path do
       %i.fa.fa-plus.fa-2x New Activity
+
+  
+  %button#form_button
+    Form Button
+
+  #lean_overlay.form_hide
+    = render 'form'
+
+  / =render :partial => "activities/form"
   
   .latest
     %h2 Latest from ##{@destination.city}
@@ -132,5 +141,12 @@
 
 
 
+:javascript
+$(document).ready(function(){
+  
+  $("#form_button").on('click', function(el) {
+  console.log('clicked!');
+    $(el.currentTarget).leanModal();
+  });
 
-
+};

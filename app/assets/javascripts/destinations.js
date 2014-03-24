@@ -26,6 +26,8 @@ function initialize() {
   }
 ]
 
+
+
   };
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -60,10 +62,7 @@ $(loadScript);
 // )};
 
 
-// $( document ).ready(function() {
-//   function test() {
-//     alert('is this working?');
-//   );
+
 
 // )};
 
