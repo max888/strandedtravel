@@ -234,3 +234,18 @@ margin-bottom: 30px;
     background: #000;
     display: none;
 }
+
+
+
+
+#activities_form {
+  position: fixed;
+  z-index:100;
+  padding: 1em;
+  top: 0px;
+  left: 0px;
+  height:90%;
+  width:50%;
+  background: #ababab;
+  display: none;
+}

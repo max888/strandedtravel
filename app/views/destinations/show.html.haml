@@ -1,7 +1,5 @@
 .sixteen.columns.show
 
-  %p#notice= notice
-
   #country_header
     %h1
       = @destination.city
@@ -82,17 +80,13 @@
 
 
   #add_activity
-    =link_to new_activity_path do
-      %i.fa.fa-plus.fa-2x New Activity
+    %i.fa.fa-plus.fa-2x New Activity
 
-  
-  %button#form_button
-    Form Button
 
-  #lean_overlay.form_hide
-    = render 'form'
+  / #lean_overlay.form_hide
+  #activities_form
+    = render :partial => '/activities/form'
 
-  / =render :partial => "activities/form"
   
   .latest
     %h2 Latest from ##{@destination.city}
@@ -141,12 +135,12 @@
 
 
 
-:javascript
-$(document).ready(function(){
+/ :javascript
+/ $(document).ready(function(){
   
-  $("#form_button").on('click', function(el) {
-  console.log('clicked!');
-    $(el.currentTarget).leanModal();
-  });
+/   $("#add_activity").on('click', function(el) {
+/   console.log('clicked!');
+/     $(el.currentTarget).leanModal();
+/   });
 
-};
+/ };

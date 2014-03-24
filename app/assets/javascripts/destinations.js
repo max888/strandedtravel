@@ -46,7 +46,23 @@ function loadScript() {
 
 $(loadScript);   
 
+$(document).ready(function(){
+  $new_activity = $('#add_activity')
+  $('.search').hide();
 
+  $new_activity.on( "click", function(){
+
+    $('#activities_form').show();
+  });
+
+
+  $('.search_button').on('click', function() {
+
+    console.log('show search')
+    $('.search').show();
+  });
+
+});
 
 // //modified javascript 
 
