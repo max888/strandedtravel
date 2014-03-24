@@ -24,6 +24,7 @@ class DestinationsController < ApplicationController
     @explores = @activities.where :category_id => 4
     @destination_city_nowhitespace = @destination.city.delete(' ')
     @activity = Activity.new(destination_id: params[:id])
+    @voting_activity = Activity
 
     photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc&callback=?&count=6")
     body = JSON.parse(photo_data.body)["data"]

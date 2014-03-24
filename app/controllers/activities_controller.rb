@@ -91,7 +91,10 @@ class ActivitiesController < ApplicationController
     @destination = Destination.where(:id => @activity.destination_id).first
     begin
       current_user.vote_for(@activity)
-      redirect_to @destination 
+      respond_to do |format|
+        format.html { redirect_to @destination }
+        format.json { render json: {} }
+      end
       
     rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404

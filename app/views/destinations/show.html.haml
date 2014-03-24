@@ -28,7 +28,8 @@
             -if current_user.voted_against?(a) || current_user.voted_for?(a)
               =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
             -else
-              =link_to vote_up_activity_path(a), :method => :post do
+              
+              =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
                 %i.fa.fa-thumbs-o-up
               =link_to vote_down_activity_path(a), :method => :post do
                 %i.fa.fa-thumbs-o-down 
@@ -121,6 +122,7 @@
 
 =hidden_field_tag :longitude, @destination.longitude
 =hidden_field_tag :latitude, @destination.latitude
+
 
 
 #fb-root

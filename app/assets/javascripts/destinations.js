@@ -51,7 +51,6 @@ $(document).ready(function(){
   $('.search').hide();
 
   $new_activity.on( "click", function(){
-
     $('#activities_form').show();
   });
 
@@ -59,28 +58,33 @@ $(document).ready(function(){
   $('.search_button').on('click', function() {
 
     console.log('show search')
-    $('.search').show();
+    $('.search').slideDown(800);
+  });
+
+
+  $('.vote_up_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        console.log('voted up successfully');
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    });
+
+    return false;
+
   });
 
 });
 
-// //modified javascript 
-
-// $( document ).ready(function() {
-
-//   showSearch = function () { 
-//     var $search_box = $('.search');
-
-//     $("#logo").click(function(){
-//     $search_box.slideDown();
-//     )};
-
-// )};
 
 
 
-
-// )};
 
 
 
