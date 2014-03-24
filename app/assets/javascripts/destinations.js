@@ -75,7 +75,7 @@ $(document).ready(function(){
       error: function(data) {
         console.log('voted up broke');
       }
-    });
+    }); 
 
     return false;
 

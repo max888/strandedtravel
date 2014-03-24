@@ -27,9 +27,11 @@ i.fa {
 
 a:hover i.fa {color: black;}
 
+// a:hover .search_button {color: black;}
+
 
 #logo {
-  border: 2px solid red;
+  // border: 2px solid red;
   text-align: center;
 }
 
@@ -41,7 +43,7 @@ a:hover i.fa {color: black;}
 }
 
 .search {
-  border: 2px solid blue;
+  // border: 2px solid blue;
   display: block;
 }
 
@@ -63,7 +65,7 @@ a:hover i.fa {color: black;}
 }
 
 .photos_container {
-  border: 2px solid green;
+  // border: 2px solid green;
 }
 
 .photos_container li {
@@ -236,7 +238,11 @@ margin-bottom: 30px;
 }
 
 
-
+.form_container {
+  display: block;
+  margin: 0 auto;
+  width: 39%;
+}
 
 #activities_form {
   position: fixed;
@@ -248,4 +254,8 @@ margin-bottom: 30px;
   width:50%;
   background: #ababab;
   display: none;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 30px;
+  opacity: 0.97;
 }
