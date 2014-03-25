@@ -10,6 +10,9 @@ class Activity < ActiveRecord::Base
 
   before_validation :correct_url
 
+  validates :name, presence: true, :length => {:minimum => 2, :maximum => 150 }
+  validates :category_id, presence: true
+  
   def correct_url
     self.url = "http://#{self.url}" if !self.url[/\Ahttp/] && !url.blank?
   end

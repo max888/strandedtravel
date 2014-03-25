@@ -73,7 +73,11 @@ a:hover i.fa {color: black;}
   position: relative; 
 }
 
-
+#destination_image {
+  height: 300px;
+/* overflow: hidden; */
+  width: 100%;
+}
 
 .photos_container h3 {
   position: absolute;

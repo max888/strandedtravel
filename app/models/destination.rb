@@ -8,5 +8,11 @@ class Destination < ActiveRecord::Base
   geocoded_by :city
   after_validation :geocode
   mount_uploader :photo, DestinationImageUploader
+
+  validates :city, presence: true, :length => {:minimum => 2, :maximum => 150 }
+  validates :country, presence: true, :length => {:minimum => 2, :maximum => 150 }
+  validates :description, presence: true, :length => { :minimum => 3, :maximum => 800 }
+  validates :photo, presence: true
+
   
 end
