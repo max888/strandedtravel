@@ -30,8 +30,7 @@
     .seven.columns#explore_container
       = render :partial => '/activities/explore'
 
-
-  #add_activity
+  = link_to '#', id: 'add_activity' do
     %i.fa.fa-plus.fa-2x New Activity
 
 
@@ -53,12 +52,16 @@
   #map-canvas 
 
   #twitterbox
-    %p twitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twittertwitter twitter twitter twitter twitter twitter
+    - @twitter_data.each do |tweet| 
+      %h4
+        = tweet.user.name
+      = tweet.text 
+      %br
 
   .comments
     %h3 Comments:
     #fbcomments
-      .fb-comments{ 'data-href' => "http://example.com/comments", 'data-numposts' => "5", 'data-colorscheme' => "light"}
+      .fb-comments{ 'data-href' => "#{request.original_url}", 'data-numposts' => "5", 'data-colorscheme' => "light"}
 
   .bottom_nav
 

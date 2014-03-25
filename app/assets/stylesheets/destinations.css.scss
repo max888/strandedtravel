@@ -187,12 +187,12 @@ margin-bottom: 30px;
 // }
 
 #twitterbox {
-  background-color: lightblue;
+  background-color: #b3f3ff;
   height:300px;
   width: 600px;
   display: inline-block;
   // border: 2px solid green;
-  float: right;
+  float: left;
 
 }
 
@@ -201,12 +201,14 @@ margin-bottom: 30px;
   height: 300px;
   margin-right: 5px;
   display: inline-block;
+  float: left;
   // border: 2px solid red;
 
 }
 
 .comments {
   margin-top: 70px;
+  clear: both;
 }
 
 .comments h3 {

@@ -154,8 +154,9 @@ $(document).ready(function(){
   setupSleepVoteClickHandlers();
   setupExploreVoteClickHandlers();
 
-  $('#close_button').on('click', function() {
-    ('#activities_form').hide();
+  $('#close_button').on('click', function(ev) {
+    ev.preventDefault();
+    $('#activities_form').hide();
   });
 
 });
