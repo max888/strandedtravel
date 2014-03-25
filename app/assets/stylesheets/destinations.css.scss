@@ -69,18 +69,21 @@ a:hover i.fa {color: black;}
 }
 
 .photos_container li {
-  border: 2px solid yellow;
   display: inline-block;
-  // position: relative; 
+  position: relative; 
 }
 
 
 
 .photos_container h3 {
-   // position: absolute; 
-   top: 200px; 
-   left: 0; 
-   width: 100%; 
+  position: absolute;
+  top: 10%;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+  left: 0;
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
 }
 
 
@@ -193,8 +196,9 @@ margin-bottom: 30px;
   display: inline-block;
   // border: 2px solid green;
   float: left;
-
 }
+
+
 
 #map-canvas {
   width: 300px;
