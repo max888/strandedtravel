@@ -19,6 +19,7 @@ StrandedTravel::Application.routes.draw do
     end
     member do
       get :redraw_eat_container
+      get :redraw_drink_container
     end    
   end
   get 'destinations/:id/activities/new', to: 'activities#new', as: 'new_destination_activity'

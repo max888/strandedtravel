@@ -106,6 +106,14 @@ class DestinationsController < ApplicationController
     end    
   end 
 
+  def redraw_drink_container
+    @destination = Destination.find(params[:id])
+    setup_show_data
+    respond_to do |format|
+      format.js
+    end    
+  end 
+
 
   private
   def setup_show_data

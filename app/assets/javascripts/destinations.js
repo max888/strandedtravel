@@ -60,6 +60,28 @@ function setupVoteClickHandlers() {
     return false;
 
   });
+}
+
+function setupDrinkVoteClickHandlers() {
+  $('.drink_vote_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        console.log('voting worked');
+        $.get('/destinations/' + $('body').data('id') + '/redraw_drink_container');
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    }); 
+
+    return false;
+
+  });
 
 }
 
@@ -82,6 +104,7 @@ $(document).ready(function(){
   });
 
   setupVoteClickHandlers();
+  setupDrinkVoteClickHandlers();
 
   $('#close_button').on('click', function() {
     ('#activities_form').hide();
