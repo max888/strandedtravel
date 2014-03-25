@@ -55,7 +55,10 @@
     - @twitter_data.each do |tweet| 
       %h4
         = tweet.user.name
-      = tweet.text 
+
+      / {{ '<%= auto_link("tweet.text") %>' |e }}
+
+      = raw auto_link(tweet.text) 
       %br
 
   .comments

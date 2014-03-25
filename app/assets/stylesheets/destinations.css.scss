@@ -45,6 +45,7 @@ a:hover i.fa {color: black;}
 .search {
   // border: 2px solid blue;
   display: block;
+  margin-bottom: 30px;
 }
 
 #destination_search {
@@ -150,6 +151,22 @@ a:hover i.fa {color: black;}
 
 }
 
+#eat_container {
+  margin-left: 40px;
+}
+
+#drink_container {
+  margin-left: 40px;
+}
+
+#sleep_container {
+  margin-left: 40px;
+}
+
+#explore_container {
+  margin-left: 40px;
+}
+
 #add_activity {
   display: block
 }
@@ -202,9 +219,15 @@ margin-bottom: 30px;
   display: inline-block;
   // border: 2px solid green;
   float: left;
+  height: 260px;
+  padding: 20px;
+  width: 580px;
 }
 
 
+#twitterbox h4 {
+  font-family: 'Oswald', sans-serif;
+}
 
 #map-canvas {
   width: 300px;
