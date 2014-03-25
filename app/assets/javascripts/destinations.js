@@ -85,6 +85,52 @@ function setupDrinkVoteClickHandlers() {
 
 }
 
+function setupSleepVoteClickHandlers() {
+  $('.sleep_vote_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        console.log('voting worked');
+        $.get('/destinations/' + $('body').data('id') + '/redraw_sleep_container');
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    }); 
+
+    return false;
+
+  });
+
+}
+
+function setupExploreVoteClickHandlers() {
+  $('.explore_vote_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        console.log('voting worked');
+        $.get('/destinations/' + $('body').data('id') + '/redraw_explore_container');
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    }); 
+
+    return false;
+
+  });
+
+}
+
 
 $(loadScript);   
 
@@ -105,6 +151,8 @@ $(document).ready(function(){
 
   setupVoteClickHandlers();
   setupDrinkVoteClickHandlers();
+  setupSleepVoteClickHandlers();
+  setupExploreVoteClickHandlers();
 
   $('#close_button').on('click', function() {
     ('#activities_form').hide();

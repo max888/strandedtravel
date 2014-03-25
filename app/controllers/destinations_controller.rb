@@ -114,6 +114,22 @@ class DestinationsController < ApplicationController
     end    
   end 
 
+  def redraw_sleep_container
+    @destination = Destination.find(params[:id])
+    setup_show_data
+    respond_to do |format|
+      format.js
+    end    
+  end 
+
+  def redraw_explore_container
+    @destination = Destination.find(params[:id])
+    setup_show_data
+    respond_to do |format|
+      format.js
+    end    
+  end 
+
 
   private
   def setup_show_data

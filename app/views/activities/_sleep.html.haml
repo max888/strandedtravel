@@ -5,9 +5,9 @@
     =a.plusminus
     -if current_user
       -if current_user.voted_against?(a) || current_user.voted_for?(a)
-        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post
+        =link_to 'remove vote', remove_vote_activity_path(a), :method => :post, class: "sleep_vote_activity"
       -else
-        =link_to vote_up_activity_path(a), class: "vote_up_activity", :method => :post do
+        =link_to vote_up_activity_path(a), class: "sleep_vote_activity", :method => :post do
           %i.fa.fa-thumbs-o-up
-        =link_to vote_down_activity_path(a), class: "vote_down_activity", :method => :post do
+        =link_to vote_down_activity_path(a), class: "sleep_vote_activity", :method => :post do
           %i.fa.fa-thumbs-o-down 
