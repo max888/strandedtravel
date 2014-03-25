@@ -14,7 +14,12 @@ StrandedTravel::Application.routes.draw do
   resources :votes
 
   resources :destinations do
-    get 'page/:page', action: :index, on: :collection
+    collection do
+      get 'page/:page', action: :index
+    end
+    member do
+      get :redraw_eat_container
+    end    
   end
   get 'destinations/:id/activities/new', to: 'activities#new', as: 'new_destination_activity'
 

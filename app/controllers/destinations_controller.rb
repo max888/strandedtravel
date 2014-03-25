@@ -17,23 +17,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/1.json
   def show
     @destination = Destination.find(params[:id])
-    @activities = Activity.where(destination_id: @destination.id).plusminus_tally.order('plusminus_tally DESC')
-    @eats = @activities.where :category_id => 1
-    @drinks = @activities.where :category_id => 2
-    @sleeps = @activities.where :category_id => 3
-    @explores = @activities.where :category_id => 4
-    @destination_city_nowhitespace = @destination.city.delete(' ')
-    @activity = Activity.new(destination_id: params[:id])
-    
-
-    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc&callback=?&count=6")
-    body = JSON.parse(photo_data.body)["data"]
-    @images = body.map { |i| i["images"]["low_resolution"]["url"] }
-
-    geo_photo_data  = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@destination.latitude}8&lng=#{@destination.longitude}&access_token=41307971.8f6d1dc.ca108e84e31a4e9ab8527621efff201b")
-    geo_body = JSON.parse(photo_data.body)["data"]
-    @geo_images = body.map { |i| i["images"]["low_resolution"]["url"] }
-
+    setup_show_data
 
     # client = Twitter::REST::Client.new do |config|
     #   config.consumer_key        = "5rdaJ4nM1LXlyQuENp1mEQ"
@@ -114,4 +98,31 @@ class DestinationsController < ApplicationController
   end
 
 
+  def redraw_eat_container
+    @destination = Destination.find(params[:id])
+    setup_show_data
+    respond_to do |format|
+      format.js
+    end    
+  end 
+
+
+  private
+  def setup_show_data
+    @activities = @destination.activities.plusminus_tally.order('plusminus_tally DESC')
+    @eats = @activities.where :category_id => 1
+    @drinks = @activities.where :category_id => 2
+    @sleeps = @activities.where :category_id => 3
+    @explores = @activities.where :category_id => 4
+    @destination_city_nowhitespace = @destination.city.delete(' ')
+    @activity = Activity.new(destination_id: params[:id])
+    
+    photo_data  = HTTParty.get("https://api.instagram.com/v1/tags/#{@destination_city_nowhitespace}/media/recent?client_id=8f6d1dc952db409f8f2762cb354711fc&callback=?&count=6")
+    body = JSON.parse(photo_data.body)["data"]
+    @images = body.map { |i| i["images"]["low_resolution"]["url"] }
+
+    geo_photo_data  = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@destination.latitude}8&lng=#{@destination.longitude}&access_token=41307971.8f6d1dc.ca108e84e31a4e9ab8527621efff201b")
+    geo_body = JSON.parse(photo_data.body)["data"]
+    @geo_images = body.map { |i| i["images"]["low_resolution"]["url"] }
+  end
 end

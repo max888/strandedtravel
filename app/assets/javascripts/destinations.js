@@ -42,6 +42,26 @@ function loadScript() {
   document.body.appendChild(script);
 }
 
+function setupVoteClickHandlers() {
+  $('.vote_activity').on( 'click', function(ev) {
+    ev.preventDefault();
+    $.ajax({
+      url: $(ev.currentTarget).attr('href'),
+      dataType: 'json',
+      type: "POST",
+      success: function(data) {
+        $.get('/destinations/' + $('body').data('id') + '/redraw_eat_container');
+      },
+      error: function(data) {
+        console.log('voted up broke');
+      }
+    }); 
+
+    return false;
+
+  });
+
+}
 
 
 $(loadScript);   
@@ -61,44 +81,7 @@ $(document).ready(function(){
     $('.search').slideDown(800);
   });
 
-
-  $('.vote_up_activity').on( 'click', function(ev) {
-    ev.preventDefault();
-    $.ajax({
-      url: $(ev.currentTarget).attr('href'),
-      dataType: 'json',
-      type: "POST",
-      success: function(data) {
-        console.log('voted up successfully');
-        $(ev.currentTarget).hide();
-      },
-      error: function(data) {
-        console.log('voted up broke');
-      }
-    }); 
-
-    return false;
-
-  });
-
-  $('.vote_down_activity').on( 'click', function(ev) {
-    ev.preventDefault();
-    $.ajax({
-      url: $(ev.currentTarget).attr('href'),
-      dataType: 'json',
-      type: "POST",
-      success: function(data) {
-        console.log('voted up successfully');
-        $(ev.currentTarget).hide();
-      },
-      error: function(data) {
-        console.log('voted up broke');
-      }
-    });
-
-    return false;
-
-  });
+  setupVoteClickHandlers();
 
   $('#close_button').on('click', function() {
     ('#activities_form').hide();

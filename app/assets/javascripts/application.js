@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.leanModal.min2.js
+//= require underscore.js
 //= require_tree .
