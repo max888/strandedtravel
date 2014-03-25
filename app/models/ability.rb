@@ -13,6 +13,14 @@ class Ability
         can :read, :all
 
         can :create, Activity
+        can :vote_up, Activity
+        can :vote_down, Activity
+        can :remove_vote, Activity
+
+        can :redraw_drink_container, Destination
+        can :redraw_eat_container, Destination
+        can :redraw_sleep_container, Destination
+        can :redraw_explore_container, Destination
 
         can :create, Destination
         can :edit, Destination do |destination|
