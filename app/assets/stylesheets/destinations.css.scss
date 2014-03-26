@@ -222,11 +222,13 @@ margin-bottom: 30px;
   height: 260px;
   padding: 20px;
   width: 580px;
+  margin-bottom: 30px;
 }
 
 
 #twitterbox h4 {
   font-family: 'Oswald', sans-serif;
+
 }
 
 #map-canvas {
@@ -235,12 +237,12 @@ margin-bottom: 30px;
   margin-right: 5px;
   display: inline-block;
   float: left;
+  margin-bottom: 20px;
   // border: 2px solid red;
 
 }
 
 .comments {
-  margin-top: 70px;
   clear: both;
 }
 
