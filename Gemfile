@@ -21,7 +21,7 @@ gem 'twitter-text'
 gem 'pg'
 gem 'taps'
 gem "fog", "~> 1.3.1"
-gem "mini_magick"
+gem "mini_magick" 
   
 
 # Gems used only for assets and not required
