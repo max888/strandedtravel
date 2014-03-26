@@ -19,6 +19,7 @@ gem 'httparty'
 gem 'geocoder'
 gem 'twitter'
 gem 'twitter-text'
+gem 'pg'
 
 
 # Gems used only for assets and not required
