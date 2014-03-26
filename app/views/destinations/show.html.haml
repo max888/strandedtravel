@@ -30,8 +30,15 @@
     .seven.columns#explore_container
       = render :partial => '/activities/explore'
 
-  = link_to '#', id: 'add_activity' do
-    %i.fa.fa-plus.fa-2x New Activity
+
+  - if current_user
+    = link_to '#', id: 'add_activity' do
+      %i.fa.fa-plus.fa-2x New Activity
+  -else
+    = link_to new_user_session_path do
+      %i.fa.fa-sign-in.fa-2x 
+        %h5
+          Sign in to Vote!
 
 
   / #lean_overlay.form_hide

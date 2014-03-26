@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       subject = exception.subject.class.to_s.downcase
       subject = subject.pluralize if :index == exception.action
 
-      redirect_to main_app.root_url, :alert => "Sorry you do not have access to #{action_message} #{subject}."
+      redirect_to main_app.root_url, :alert => "Sorry you need to sign in to #{action_message} #{subject}."
   end
   
 end
