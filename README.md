@@ -9,5 +9,46 @@ Users are asked to give a short description of the destination. Data is then pul
 
 The aim is to strike a balance between inspiration and information.
 
+Stranded Travel includes:
+
+**Gems**
+
+* Devise (user authentication)
+* Oauth Facebook (facebook login)
+* Carrierwave (image uploader)
+* Cancancan (user authorisation)
+* Thumbsup (to make models voteable)
+* Kaminari (pagination)
+* Geocoder (finds latitude and longitude by placename)
+* Twitter Gem (helps pull in tweets for each country)
+* Twitter-text (converts tweets links into clickable links)
+* HTTParty (used for the Instagram API)
+
+
+**API's**
+
+* Instagram
+* Google Maps
+* Twitter
+
+**Markup**
+
+* HAML
+
+**Javascript**
+
+* jQuery
+* AJAX
+
+
+
+
+
+
+
+
+
+
+
 I welcome all feedback so please get in touch with any suggestions :)
 
