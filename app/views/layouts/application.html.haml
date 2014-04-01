@@ -16,7 +16,9 @@
     .container
       %nav 
         = link_to destinations_path do
-          %i.fa.fa-home.fa-2x
+          .tooltip{title: "#"}
+            %span{title: "Home"}
+              %i.fa.fa-home.fa-2x
 
         / -if current_user
         /   #id=current_user.email
