@@ -1,6 +1,6 @@
 %h2 Explore
 %ol
-  - @explores.each do |a|
+  - @explores.take(3).each do |a|
     %li= a.url.blank? ? a.name : link_to(a.name, a.url)
     =a.plusminus
     -if current_user
