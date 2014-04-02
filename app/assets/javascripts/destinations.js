@@ -142,6 +142,10 @@ $(document).ready(function(){
     $('#activities_form').show();
   });
 
+  $('#all_eat').on("click", function(){
+    $('#complete_eat').show();
+  });
+
 
   $('.search_button').on('click', function() {
 

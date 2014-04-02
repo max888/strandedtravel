@@ -40,10 +40,17 @@
         %h5
           Sign in to Vote!
 
-
+  
   / #lean_overlay.form_hide
   #activities_form
-    = render :partial => '/activities/form'
+    = render :partial => '/activities/form' 
+    
+  
+  = link_to '#', id: 'all_eat' do
+    %i.fa.fa-plus.fa-2x All Eat
+
+  #complete_eat
+    = render :partial => '/activities/complete_eat'
 
   
   .latest
