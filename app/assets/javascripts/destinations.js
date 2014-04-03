@@ -146,7 +146,7 @@ $(document).ready(function(){
     $('#complete_eat').show();
   });
 
-
+  //Used to hide the activity form on click away
   $(document).mouseup(function (e){
     var container = $("#complete_eat");
 
@@ -157,9 +157,8 @@ $(document).ready(function(){
     }
   });
 
-
+  //For displaying the search button
   $('.search_button').on('click', function() {
-
     console.log('show search')
     $('.search').slideDown(800);
   });
