@@ -147,6 +147,17 @@ $(document).ready(function(){
   });
 
 
+  $(document).mouseup(function (e){
+    var container = $("#complete_eat");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+  });
+
+
   $('.search_button').on('click', function() {
 
     console.log('show search')
@@ -162,6 +173,7 @@ $(document).ready(function(){
     ev.preventDefault();
     $('#activities_form').hide();
   });
+
 
 });
 

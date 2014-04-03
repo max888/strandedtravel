@@ -20,6 +20,8 @@
     
     .seven.columns#eat_container
       = render :partial => '/activities/eat'
+      = link_to '#', id: 'all_eat' do
+        %i.fa.fa-plus.fa-2x All Eat
   
     .seven.columns#drink_container
       = render :partial => '/activities/drink'
@@ -44,10 +46,9 @@
   / #lean_overlay.form_hide
   #activities_form
     = render :partial => '/activities/form' 
-    
+
   
-  = link_to '#', id: 'all_eat' do
-    %i.fa.fa-plus.fa-2x All Eat
+  
 
   #complete_eat
     = render :partial => '/activities/complete_eat'
