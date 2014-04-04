@@ -138,17 +138,65 @@ $(document).ready(function(){
   $new_activity = $('#add_activity')
   $('.search').hide();
 
+  //Shows the hiddent new activity form
   $new_activity.on( "click", function(){
     $('#activities_form').show();
   });
 
+  //Shows the hidden complete container 
   $('#all_eat').on("click", function(){
     $('#complete_eat').show();
   });
 
+  // Shows the hidden complete drinks
+  $('#all_drink').on("click", function(){
+    $('#complete_drink').show();
+  });
+
+  // Shows the hidden complete sleeps
+  $('#all_sleep').on("click", function(){
+    $('#complete_sleep').show();
+  });
+
+  // Shows the hidden complete explore
+  $('#all_explore').on("click", function(){
+    $('#complete_explore').show();
+  });
+
+
   //Used to hide the activity form on click away
   $(document).mouseup(function (e){
     var container = $("#complete_eat");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+  });
+
+  $(document).mouseup(function (e){
+    var container = $("#complete_drink");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+  });
+
+  $(document).mouseup(function (e){
+    var container = $("#complete_sleep");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+  });
+
+  $(document).mouseup(function (e){
+    var container = $("#complete_explore");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container

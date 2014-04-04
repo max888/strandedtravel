@@ -25,13 +25,18 @@
   
     .seven.columns#drink_container
       = render :partial => '/activities/drink'
+      = link_to '#', id: 'all_drink' do
+        %i.fa.fa-plus.fa-2x All Drink
 
     .seven.columns#sleep_container
       = render :partial => '/activities/sleep'
+      = link_to '#', id: 'all_sleep' do
+        %i.fa.fa-plus.fa-2x All Sleep
 
     .seven.columns#explore_container
       = render :partial => '/activities/explore'
-
+      = link_to '#', id: 'all_explore' do
+        %i.fa.fa-plus.fa-2x All Explore
 
   - if current_user
     = link_to '#', id: 'add_activity' do
@@ -52,6 +57,16 @@
 
   #complete_eat
     = render :partial => '/activities/complete_eat'
+
+  #complete_drink
+    = render :partial => '/activities/complete_drink'
+
+  #complete_sleep
+    = render :partial => '/activities/complete_sleep'
+
+  #complete_explore
+    = render :partial => '/activities/complete_explore'
+
 
   
   .latest
