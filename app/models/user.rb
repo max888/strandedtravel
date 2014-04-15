@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  validates :name, presence: true, :length => {:minimum => 2, :maximum => 150 }
+
+  
+
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
